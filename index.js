@@ -95,6 +95,40 @@ const setup = async () => {
         `)
     })
 
+    $('body').on('click', ".numberedButtons", async function (e) {
+        currentPage = Number(e.target.value)
+        paginate(currentPage, PAGE_SIZE, pokemonList)
+        updatePaginationDiv(currentPage, numPages)
+    })
+
+    $('body').on('click', "#prevBtn", async function (e) {
+        if (currentPage > 1) {
+            currentPage--;
+            paginate(currentPage, PAGE_SIZE, pokemonList);
+            updatePaginationDiv(currentPage, numPages);
+        }
+    });
+
+    $('body').on('click', "#nextBtn", async function (e) {
+        if (currentPage < numPages) {
+            currentPage++;
+            paginate(currentPage, PAGE_SIZE, pokemonList);
+            updatePaginationDiv(currentPage, numPages);
+        }
+    });
+
+    $('body').on('click', "#firstBtn", async function (e) {
+        currentPage = 1;
+        paginate(currentPage, PAGE_SIZE, pokemonList);
+        updatePaginationDiv(currentPage, numPages);
+    });
+
+    $('body').on('click', "#lastBtn", async function (e) {
+        currentPage = numPages;
+        paginate(currentPage, PAGE_SIZE, pokemonList);
+        updatePaginationDiv(currentPage, numPages);
+    });
+
 }
 
 $(document).ready(setup)
