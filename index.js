@@ -10,6 +10,28 @@ function titleCase(str) {
     return str.join(' ');
 }
 
+const updatePaginationDiv = (currentPage, numPages) => {
+    $('#pagination').empty()
+
+    const startPage = Math.max(currentPage - 2, 1);
+    const endPage = Math.min(currentPage + 2, numPages);
+
+    $('#pagination').append(`
+      <button class="btn btn-primary page ml-1" id="firstBtn">First</button>
+      <button class="btn btn-primary page ml-1" id="prevBtn">Previous</button>
+  `);
+
+    for (let i = startPage; i <= endPage; i++) {
+        $('#pagination').append(`
+      <button class="btn btn-primary page ml-1 numberedButtons" value="${i}">${i}</button>
+    `);
+    }
+
+    $('#pagination').append(`
+      <button class="btn btn-primary page ml-1" id="nextBtn">Next</button>
+      <button class="btn btn-primary page ml-1" id="lastBtn">Last</button>
+  `);
+}
 
 const paginate = async (currentPage, PAGE_SIZE, pokemons) => {
     selected_pokemons = pokemons.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
