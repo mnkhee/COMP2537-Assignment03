@@ -21,3 +21,21 @@
     width: 100%;
     height: 100%;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+br.level-3 {
+    display: block;
+    content: "";
+    margin: 4rem 0;
+}
+
+.pokeName {
+    color: #FFC107;
+    -webkit-text-stroke: 1px #1338BE;
+}

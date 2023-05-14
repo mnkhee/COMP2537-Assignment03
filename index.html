@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 03</title>
 
-    <!--axios-->
+    <!--Axios-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <!--bootstrap-->
+    <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -25,17 +25,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <!--imports-->
+    <!--Imports-->
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+    <!--Header-->
+    <div id="header" style="background-color: #1338BE">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1" style="color: white">Pokemon Website</span>
+            </div>
+        </nav>
+    </div>
 
     <h2>Showing 10 out of 810 Pokemon</h2>
 
+    <!--Filter buttons-->
+    <div id="filters"></div>
+
+    <!--Pokemon cards-->
     <div id="pokeCards"></div>
 
+    <!--Modal-->
     <div id="pokeModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -55,6 +68,15 @@
         </div>
     </div>
 
+    <!--Pagination-->
+    <br class="level-3">
     <div id="pagination"></div>
+
+    <!--Footer-->
+    <footer class="text-light p-5 text-center" style="background-color: #1338BE">
+        <p class="lead h1">
+            Copyright &copy; 2023
+        </p>
+    </footer>
 
 </html>
