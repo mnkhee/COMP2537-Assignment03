@@ -22,12 +22,12 @@
     height: 100%;
 }
 
-#sectionFooter {
+/* footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 100px;
-}
+} */
 
 br.level-3 {
     display: block;
@@ -39,3 +39,15 @@ br.level-3 {
     color: #FFC107;
     -webkit-text-stroke: 1px #1338BE;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+  }
