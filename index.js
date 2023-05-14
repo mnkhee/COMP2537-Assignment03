@@ -73,6 +73,11 @@ const filterByType = async (type) => {
   $('#pokeCards').empty();
   const res = await axios.get(`https://pokeapi.co/api/v2/type/${type}`);
   const pokemonList = res.data.pokemon.map((pokemon) => pokemon.pokemon);
+  console.log(pokemonList.length);
+  $('#text-header').empty();
+  $('#text-header').append(`
+  <h2>Showing 10 out of ${pokemonList.length} Pokemon</h2>
+  `);
   paginate(currentPage, PAGE_SIZE, pokemonList);
   const numPages = Math.ceil(pokemonList.length / PAGE_SIZE);
   updatePaginationDiv(currentPage, numPages);
